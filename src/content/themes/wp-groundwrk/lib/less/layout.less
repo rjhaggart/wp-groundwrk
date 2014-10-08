@@ -1,0 +1,44 @@
+/*! layout */
+
+// Contents
+// ----------------------------------------------
+// Logo
+// ----------------------------------------------
+
+// Logo ///////////////////////////////////////////////////////////////////////
+
+.header-image .site-title > a{
+	background: url('@{path-img}/logo.png') no-repeat;
+	height: 80px;
+}
+
+// Sticky footer //////////////////////////////////////////////////////////////
+
+@footer-height: 90px;
+
+html, body {
+	height: 100%;
+}
+ 
+.site-container {
+	height: 100%;
+}
+ 
+.page-wrap {
+	min-height: 100%;
+	/* equal to footer height */
+	margin-bottom: -@footer-height; 
+ 
+}
+ 
+.site-inner {
+	min-height: 100%;
+	/* equal to footer height */
+	margin-bottom: -@footer-height; 
+}
+ 
+.site-footer, .site-inner:after {
+	/* .site-footer and .site-inner:after must be same height as .site-inner */
+	height: @footer-height; 
+ 
+}

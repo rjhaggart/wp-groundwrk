@@ -1,0 +1,21 @@
+<div class="page hentry entry">
+	<h1 class="entry-title">{{post.post_title}}</h1>
+	<div class="entry-content">
+	
+		<div class="contact-container" id="{{contact.id}}">
+			<div class="contact-list-item">
+				<table class="table table-striped">
+					<tr>
+						<td>Name</td>
+						<td>{{post.get_field('wpgw_name')}}</td>
+					</tr>
+					<tr>
+						<td>Email</td>
+						<td>{{post.get_field('wpgw_email')}}</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+</div>

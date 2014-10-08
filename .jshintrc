@@ -1,0 +1,21 @@
+{
+    "boss": true,
+    "browser": true,
+    "curly": true,
+    "devel": false,
+    "eqeqeq": false,
+    "-W041": false,
+    "eqnull": true,
+    "immed": true,
+    "latedef": true,
+    "laxbreak": true,
+    "newcap": true,
+    "noarg": true,
+    "shadow": true,
+    "sub": true,
+    "trailing": true,
+    "undef": false,
+    "unused": false,
+    "white": false,
+    "jquery": true
+}

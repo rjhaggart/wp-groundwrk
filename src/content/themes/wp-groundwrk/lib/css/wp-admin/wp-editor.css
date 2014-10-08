@@ -1,0 +1,52 @@
+html .mceContentBody {
+    max-width: 700px;
+}
+
+* {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif !important;
+    color: #444;
+    line-height: 2em;
+}
+
+/* Text elements */
+
+ul {
+    list-style: square;
+    margin: 0 0 18px -18px;
+}
+
+ol {
+    list-style: decimal;
+    margin: 0 0 18px -18px;
+}
+
+strong {
+    font-weight: bold;
+    color: #000;
+}
+
+cite, em, i {
+    font-style: italic;
+    border:none;
+}
+
+big {
+    font-size: 131.25%;
+}
+
+blockquote {
+    font-style: italic;
+    padding: 0 3em;
+    margin-left: 0;
+    margin-right: 0;
+}
+ 
+a:link {
+    color:#0066CC;
+}
+a:visited {
+    color:#743399;
+}
+a:active, a:hover {
+    color: #FF4B33;
+}

@@ -1,0 +1,29 @@
+{
+    "name": "WP Groundwrk",
+    "version": "v1.0.0",
+    "authors": [
+        "Ross Haggart <r.j.haggart@dundee.ac.uk>"
+    ],
+    "description": "WP Groundwrk, A WordPress Starter Kit",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "jquery": "~1.11.1",
+        "jquery-ui": "~1.10.4",
+        "bootstrap": "~3.1.1",
+        "sidr": "1.2.1",
+        "jrespond": "https://raw.githubusercontent.com/ten1seven/jRespond/master/js/jRespond.js"
+    },
+    "exportsOverride": {
+        "bootstrap": {
+            "less": "less/*.less",
+            "fonts": "fonts/**"
+        }
+    }
+}

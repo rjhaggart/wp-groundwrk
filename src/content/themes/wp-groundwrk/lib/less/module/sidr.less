@@ -1,0 +1,73 @@
+/*! sidr */
+
+// Contents
+// ----------------------------------------------
+// Sidr (mobile off canvas nav)
+// ----------------------------------------------
+
+// Sidr (mobile off canvas nav) ///////////////////////////////////////////////
+
+@sidr-width: 260px;
+@sidr-bg: #515151;
+
+.sidr{
+	background: @sidr-bg;
+	color: #fff;
+	display: none;
+	font-family: @type-stack2;
+	height: 100%;
+	overflow-x: none;
+	overflow-y: auto;
+	position: absolute;
+	position: fixed;
+	text-transform: uppercase;
+	top: 0;
+	width: @sidr-width;
+	z-index: 999999;
+}
+
+.sidr.right{
+	left: auto;
+	right: -@sidr-width;
+}
+
+.sidr.left{
+	left: -@sidr-width;
+	right: auto;
+}
+
+.sidr-class-sb-header{
+	font-size: 1.5em;
+	margin: 15px 15px 10px 15px;
+}
+
+.sidr{
+	ul{
+		display: block;
+		margin: 0 015px;
+		padding: 0;
+		li{
+			border-bottom: 1px solid darken(@sidr-bg, 4%);
+			display: block;
+			line-height: 48px;
+			margin: 0;
+			a{
+				color: #fff;
+			}
+			&:last-child{
+				border-bottom: none;
+			}
+			> ul{
+				li{
+					font-size: 0.9em;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+

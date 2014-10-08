@@ -1,0 +1,18 @@
+# Turn on rewrites.
+RewriteEngine on
+
+AddType application/x-httpd-php .php
+ 
+# Don't apply to URLs that go to existing files or folders.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+ 
+# Only apply to URLs that aren't already under /public.
+RewriteCond %{REQUEST_URI} !^/public/
+ 
+# Rewrite all those to insert /public.
+RewriteRule ^(.*)$ /public/$1
+ 
+# Redirect the root folder.
+RewriteCond %{HTTP_HOST} ^(www.)?local.wp-groundwrk$
+RewriteRule ^(/)?$ public/ [L]

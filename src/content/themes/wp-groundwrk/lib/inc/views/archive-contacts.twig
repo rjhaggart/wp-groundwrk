@@ -1,0 +1,18 @@
+<div class="page hentry entry">
+	<h1 class="entry-title">Contacts</h1>
+	<div class="entry-content">
+	
+		{% for contact in posts %}
+			<div class="contact-container" id="{{contact.id}}">
+				<div class="contact-list-item">
+					<table class="table table-striped">
+						<tr>
+							<td><a href="/contacts/{{contact.slug}}">{{contact.get_field('wpgw_name')}}</a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		{% endfor %}
+
+	</div>
+</div>

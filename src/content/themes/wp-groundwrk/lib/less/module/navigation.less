@@ -1,0 +1,59 @@
+/*! navigation */
+
+// Contents
+// ----------------------------------------------
+// Navigation
+// - Mobile nav button
+// - Hide primary nav for mobile
+// Back to top
+// ----------------------------------------------
+
+// Navigation /////////////////////////////////////////////////////////////////
+
+// Mobile nav button ////////////////////////////
+
+.menu-btn{
+	color: #fff;
+	display: none !important;
+	font-weight: normal;
+}
+
+@media (max-width: @screen-sm-min){
+
+	.menu-btn{
+		cursor: pointer;
+		display: block !important;
+		float: right;
+		padding-bottom: 14px;
+	}
+
+}
+
+// Hide primary nav for mobile //////////////////
+
+@media (max-width: @screen-sm-min){
+	
+	.nav-primary{
+		ul{
+			margin: 0;
+			li{
+				a{
+					display: none !important;
+				}
+			}
+		}
+	}
+
+}
+
+// Back to top ////////////////////////////////////////////////////////////////
+
+.back-top{
+	color: #ccc;
+	float: right;
+	outline: none;
+	&:hover, &:active, &:focus{
+		color: #555;
+		text-decoration: none;
+	}
+}

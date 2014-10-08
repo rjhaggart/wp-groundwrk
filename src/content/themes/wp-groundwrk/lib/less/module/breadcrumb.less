@@ -1,0 +1,39 @@
+/*! breadcrumb */
+
+// Contents
+// ----------------------------------------------
+// Breadcrumb
+// ----------------------------------------------
+
+// Breadcrumb /////////////////////////////////////////////////////////////////
+
+.wrapper-breadcrumb, .breadcrumb{
+	.clearfix;
+	background: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+.wrapper-breadcrumb{
+	padding: 10px 0;
+}
+
+.breadcrumb{
+	font-size: 0.875em;
+	.glyphicon{
+		font-size: 0.875em !important;
+	}
+	a{
+		&:after{
+			color: #999;
+			content: "\00a0\00a0\00a0 / \00a0\00a0";
+			&:hover{
+				color: #999;
+				text-decoration: none;
+			}
+		}
+		&:hover, &:active, &:focus{
+			text-decoration: none;
+		}
+	}
+}

@@ -1,0 +1,44 @@
+{
+	"name": "WP Groundwrk",
+	"description": "WP Groundwrk, A WordPress Starter Kit",
+	"extra": {
+		"webroot-dir": "public",
+		"webroot-package": "public"
+	},
+	"repositories":[
+		{
+			"type":"composer",
+			"url":"http://wpackagist.org"
+		},
+		{
+			"type":"git",
+			"url":"/Users/Ross/Dropbox/htdocs/wp-dev-repos"
+		}
+	],
+	"require": {
+		"wpackagist-plugin/timber-library": ">=0.20.6",
+		"wpackagist-plugin/advanced-custom-fields": ">=4.3.9",
+		"wpackagist-plugin/backwpup": ">=3.1.2",
+		"wpackagist-plugin/black-studio-tinymce-widget": ">=1.4.8",
+		"wpackagist-plugin/genesis-easy-columns": ">=1.4",
+		"wpackagist-plugin/genesis-simple-hooks": ">=2.0.1",
+		"wpackagist-plugin/jetpack": ">=3.1.1",
+		"wpackagist-plugin/display-widgets": ">=2.03",
+		"wpackagist-plugin/formidable": ">=1.07.11",
+		"wpackagist-plugin/featured-image": ">=2.0",
+		"wpackagist-plugin/theme-check": ">=20131213.1",
+		"wpackagist-plugin/wp-google-maps": ">=6.0.26",
+		"wpackagist-plugin/livereload": ">=2.0",
+		"wpackagist-plugin/cookie-notice": ">=1.2.12",
+		"rossjha/wp-dev-repos":"dev-master"
+	},
+	"extra": {
+		"webroot-dir": "wp",
+		"webroot-package": "wordpress",
+		"installer-paths": {
+			"public/content/plugins/{$name}/": ["type:wordpress-plugin"],
+			"public/content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+			"public/content/themes/{$name}/": ["type:wordpress-theme"]
+		}
+	}
+}
