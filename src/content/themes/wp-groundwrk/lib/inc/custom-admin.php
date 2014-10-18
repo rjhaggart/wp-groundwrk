@@ -35,3 +35,22 @@ function remove_menus(){
 	
 }
 add_action('admin_menu', 'remove_menus');
+
+
+// MEDIA LIBRARY ////////////////////////////
+	
+/**
+ * Remove 'Link To' option to none
+ */
+function wpgw_always_link_images_to_none(){
+	return 'none';
+}
+add_action('pre_option_image_default_link_type', 'wpgw_always_link_images_to_none');
+
+/**
+ * Set default image size to full
+ */
+function wpgw_always_default_to_full_image_size(){
+	return 'large'; 
+}
+add_action('pre_option_image_default_size', 'wpgw_always_default_to_full_image_size');
