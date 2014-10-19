@@ -1,0 +1,48 @@
+/*! carousel */
+
+// Contents
+// ----------------------------------------------
+// Carousel
+// ----------------------------------------------
+
+// Carousel ///////////////////////////////////////////////////////////////////
+
+#page-carousel{
+	margin-bottom: 40px;
+	overflow: hidden;
+	position: relative;
+}
+
+.slider-caption{
+	background: @colour-secondary;
+	color: #fff;
+	margin: 0;
+	padding: 50px;
+	text-shadow: 0 -1px 1px darken(@colour-secondary, 10%);
+	dt{
+		font-size: 2em;
+		font-weight: normal;
+		line-height: 1em;
+		margin-bottom: 20px;
+	}
+}
+
+.slider-img{
+	background: #fff;
+}
+
+@media (min-width: @screen-sm-max){
+
+	.slider-caption{
+		height: 100%;
+		position: absolute;
+		width: 40%;
+	}
+	.slider-img{
+		.clearfix;
+		img{
+			float: right;
+		}
+	}
+
+}

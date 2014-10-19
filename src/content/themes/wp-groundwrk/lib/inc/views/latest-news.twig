@@ -1,0 +1,16 @@
+<div class="latest-news">
+	<h2>Latest News</h2>
+	{% for item in latest_news %}
+		<div class="item">
+			<div class="row">
+				<div class="item-img">
+					<img src="{{item.thumbnail.src}}" />
+				</div>
+				<div class="item-content">
+					<h3><a href="/news/{{item.slug}}">{{item.post_title}}</a></h3>
+					<p>{{item.post_content|excerpt(30)}}</p>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+</div>

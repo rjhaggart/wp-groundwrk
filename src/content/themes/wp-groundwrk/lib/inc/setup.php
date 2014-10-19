@@ -26,10 +26,14 @@ function wpgw_scripts_and_styles(){
 	// Bootstrap
 	wp_enqueue_script('script-bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js', array('jquery'), '3.2.0', true);
 
+	// Fancybox
+	wp_enqueue_script('fancybox-plugin-mousewheel', get_stylesheet_directory_uri().'/lib/vendors/fancybox/lib/jquery.mousewheel-3.0.6.pack.js', array('jquery'), '3.0.6', true);
+	wp_register_style('wpgw-fancybox-style', get_stylesheet_directory_uri().'/lib/vendors/fancybox/source/jquery.fancybox.css', array(), '2.1.5');
+	wp_enqueue_style('wpgw-fancybox-style');
+	wp_enqueue_script('fancybox-plugin', get_stylesheet_directory_uri().'/lib/vendors/fancybox/source/jquery.fancybox.pack.js', array('jquery'), '2.1.5', true);
+
 	// Main script file
 	wp_enqueue_script('script-main', get_stylesheet_directory_uri().'/lib/js/main.js', array('jquery'), CHILD_THEME_VERSION, true);
-
-
 
 	// STYLES ///////////////////////////////////
 
@@ -244,4 +248,69 @@ function wpgw_attr_content($attr){
      $attr['id'] = 'main-content';
      return $attr;
     
+}
+
+// Header top content
+function wpgw_header_top_content(){
+
+	$search = sprintf('<span class="custom-search"><i class="fa fa-search"></i>%s</span>', __(genesis_search_form()));
+	echo '<div class="header-top-content"><div class="wrap"><div class="row"><div class="col-md-4 col-md-push-8">'.$search.'</div></div></div></div>';
+
+}
+
+// Homepage carousel
+function wpgw_page_carousel(){
+
+	$carousel_images = get_field('wpgw_page_carousel');
+
+	//var_dump($carousel_images); exit;
+
+	if($carousel_images !== false){
+
+		$context['nav'] = '';
+		foreach($carousel_images as $carousel_image => $val){
+			$active = '';
+			if($carousel_image === 0) $active = 'class="active"';
+			$context['nav'] .= '<li data-target="#page-carousel" data-slide-to="'.$carousel_image.'" '.$active.'></li>';
+		} 
+
+
+		$context['images'] = $carousel_images;
+
+		Timber::render('lib/inc/views/page-carousel.twig', $context, false);
+	}
+
+}
+
+// Homepage news
+function wpgw_home_news(){
+
+	if(is_front_page()){
+
+		$args = array('numberposts' => 3);
+		$context['latest_news'] = Timber::get_posts($args);
+
+		Timber::render('lib/inc/views/latest-news.twig', $context, false);
+	
+	}
+
+}
+
+// Page gallery
+function wpgw_page_gallery(){
+
+	$cpt = get_post_type();
+
+	if(is_single()){
+
+		if($cpt === 'post' || $cpt === 'event'){
+
+			$context['post'] = Timber::get_post();
+
+			Timber::render('lib/inc/views/page-gallery.twig', $context, false);
+		
+		}
+
+	}
+
 }

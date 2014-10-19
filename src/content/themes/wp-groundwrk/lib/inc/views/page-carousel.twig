@@ -1,0 +1,17 @@
+<div id="page-carousel" class="carousel slide">
+  <ol class="carousel-indicators">
+	{{nav}}
+  </ol>
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+		{% for image in images %}
+			<div class="item">
+				<dl class="slider-caption">
+					<dt>{{image.caption}}</dt>
+					<dd>{{image.description}}</dd>
+				</dl>
+				<div class="slider-img"><img src="{{image.url}}"/></div>
+			</div>
+		{% endfor %}
+  </div>
+</div>

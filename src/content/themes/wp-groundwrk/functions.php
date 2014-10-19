@@ -117,5 +117,22 @@ function wpgw_theme_setup(){
 	// Sticky Footer Functions
 	add_action('genesis_before_header', 'wpgw_stickyfoot_wrap_begin');
 	add_action('genesis_before_footer', 'wpgw_stickyfoot_wrap_end');
+	// Remove widget and reset so they are outside content
+	remove_action('genesis_before_footer', 'genesis_footer_widget_areas');
+	add_action('genesis_before_footer', 'genesis_footer_widget_areas');
+
+	// FEATURES /////////////////////////////////
+	
+	// Header top content
+	add_action('genesis_before', 'wpgw_header_top_content');
+
+	// Homepage carousel
+	add_action('genesis_before_content', 'wpgw_page_carousel');
+
+	// Homepage news
+	add_action('genesis_entry_header', 'wpgw_home_news');
+
+	// Page gallery
+	add_action('genesis_entry_content', 'wpgw_page_gallery');
 
 }

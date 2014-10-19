@@ -30,6 +30,9 @@
 		"wpackagist-plugin/wp-google-maps": ">=6.0.26",
 		"wpackagist-plugin/livereload": ">=2.0",
 		"wpackagist-plugin/cookie-notice": ">=1.2.12",
+		"wpackagist-plugin/acf-field-date-time-picker": ">=2.0.18.1",
+		"wpackagist-plugin/duplicate-post": ">=2.6",
+		"wpackagist-plugin/current-menu-item-for-custom-post-types": ">=1.1",
 		"rossjha/wp-dev-repos":"dev-master"
 	},
 	"extra": {
