@@ -1,0 +1,39 @@
+<article class="type-page status-publish entry" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+<div class="events entry-content">
+	{% for event in events %}
+		<div class="item">
+				<div class="item-content">
+					<h2><a href="/events/{{event.slug}}">{{event.post_title}}</a></h2>
+					<ul class="event-meta">
+						<li><span>Event Date:</span> {{event.event_date}}</li>
+						<li><span>Location:</span> {{event.get_field('wpgw_event_location')}}</li>						
+					</ul>
+					<p>{{event.post_content|excerpt(30)}}</p>
+			</div>
+		</div>
+	{% endfor %}
+
+	<div class="wrapper-pagination">
+		<ul class="pagination">
+		    {% if pagination.prev %}
+		        <li><a href="{{pagination.prev.link}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'}}">&laquo;</a></li>
+		    {% else %}
+				<li class="disabled"><a href="">&laquo;</a></li>
+		    {% endif %}
+		        {% for page in pagination.pages %}
+	                {% if page.link %}
+	                   <li><a href="{{page.link}}" class="{{page.class}}">{{page.title}} <span class="sr-only">(current)</span></a></li>
+	                {% else %}
+	                    <li class="active"><a href="#" class="{{page.class}}">{{page.title}}</a></li>
+	                {% endif %}
+		        {% endfor %}
+		    {% if pagination.next %}
+		     <li><a href="{{pagination.next.link}}" class="next {{pagination.next.link|length ? '' : 'invisible'}}">&raquo;</a></li>
+		    {% else %}
+				<li class="disabled"><a href="">&raquo;</a></li>
+		    {% endif %}
+		</ul>
+	</div>
+
+</div>
+</article>
