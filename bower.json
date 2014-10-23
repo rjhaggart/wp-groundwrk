@@ -18,7 +18,8 @@
         "jquery-ui": "~1.10.4",
         "bootstrap": "~3.1.1",
         "sidr": "1.2.1",
-        "jrespond": "https://raw.githubusercontent.com/ten1seven/jRespond/master/js/jRespond.js"
+        "jrespond": "https://raw.githubusercontent.com/ten1seven/jRespond/master/js/jRespond.js",
+        "fancybox": "2.1.5"
     },
     "exportsOverride": {
         "bootstrap": {

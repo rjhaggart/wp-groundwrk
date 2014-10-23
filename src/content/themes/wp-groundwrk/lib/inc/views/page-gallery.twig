@@ -1,0 +1,25 @@
+{% if post.get_field('wpgw_page_gallery')|length > 0  %}
+<div id="page-gallery" class="carousel slide">
+
+<div class="carousel-inner">
+
+	{% for image in post.get_field('wpgw_page_gallery')|batch(4, '') %}
+
+	<div class="item">
+		<div class="row">
+			{% for img in image %}
+            		<div class="col-sm-3"><a class="fancybox img-responsive" rel="group" href="{{img.url}}"><img src="{{img.sizes.thumbnail}}" alt="" /></a></div>
+        	{% endfor %}
+		</div><!--/row-->
+	</div><!--/item-->
+
+
+	{% endfor %}
+
+</div><!--/carousel-inner--> 
+
+<a class="left carousel-control" href="#page-gallery" data-slide="prev">‹</a>
+<a class="right carousel-control" href="#page-gallery" data-slide="next">›</a>
+
+</div><!--/page-gallery-->
+{% endif %}

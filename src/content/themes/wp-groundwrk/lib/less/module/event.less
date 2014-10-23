@@ -1,0 +1,39 @@
+/*! event */
+
+// Contents
+// ----------------------------------------------
+// Event
+// ----------------------------------------------
+
+// Event //////////////////////////////////////////////////////////////////////
+
+.events{
+	h2{
+		a{
+			color: #333;
+			&:hover{
+				color: @colour-nav;
+			}
+		}
+	}
+	.item{
+		margin-bottom: 40px;
+	}
+}
+
+.event-meta{
+	.list-inline;
+	border-bottom: 1px solid @colour-base;
+	color: #555;
+	font-size: 0.875em;
+	margin: 0 0 10px 0 !important;
+	padding: 0 0 10px 0;
+	li{
+		span{
+			color: #777;
+		}
+		&:first-child:after{
+			content: ', ';
+		}
+	}
+}
