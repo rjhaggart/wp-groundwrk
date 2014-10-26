@@ -314,3 +314,22 @@ function wpgw_page_gallery(){
 	}
 
 }
+
+// Custom logo
+function wpgw_custom_logo(){
+
+	if(get_theme_mod('wpgw_logo')){
+
+		$context = array(
+			'url' => esc_url(home_url( '/' )),
+			'title' => esc_attr(get_bloginfo('name', 'display')),
+			'img' => esc_url(get_theme_mod('wpgw_logo')),
+			'alt' => esc_attr(get_bloginfo('name', 'display'))
+		);
+
+		Timber::render('lib/inc/views/custom-logo.twig', $context, false);
+	}else{
+		echo 'test';
+	}
+
+}
