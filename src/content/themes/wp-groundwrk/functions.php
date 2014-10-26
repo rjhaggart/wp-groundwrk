@@ -100,6 +100,13 @@ function wpgw_theme_setup(){
 	// Custom page <title>
 	add_filter('wp_title', 'wpgw_custom_title');
 
+	// HEADER ///////////////////////////////////
+	
+	// Custom logo
+	if(get_theme_mod('wpgw_logo')){
+		add_action('genesis_seo_title', 'wpgw_custom_logo');
+	}
+
 	// BREADCRUMBS //////////////////////////////
 
 	// Modify breadcrumbs

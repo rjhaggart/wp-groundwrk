@@ -54,3 +54,31 @@ function wpgw_always_default_to_full_image_size(){
 	return 'large'; 
 }
 add_action('pre_option_image_default_size', 'wpgw_always_default_to_full_image_size');
+
+// THEME CUSTOMISER /////////////////////////////
+
+/**
+ * Logo uploader
+ * Attribution, Kirk Wight http://goo.gl/34Roim
+ */
+function wpgw_theme_customizer($wp_customize) {
+
+	// Create new section for logo upload
+	$wp_customize->add_section( 'wpgw_logo_section' , array(
+		'title'       => __('Logo', 'wpgw'),
+		'priority'    => 30,
+		'description' => 'Upload a logo to replace the default site name and description in the header',
+	));
+
+	// Register new setting
+	$wp_customize->add_setting('wpgw_logo');
+
+	// Use image uploader for setting our logo
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wpgw_logo', array(
+		'label'    => __('Logo', 'wpgw'),
+		'section'  => 'wpgw_logo_section',
+		'settings' => 'wpgw_logo',
+	)));
+
+}
+add_action('customize_register', 'wpgw_theme_customizer');
