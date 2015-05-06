@@ -20,6 +20,9 @@ function wpgw_theme_setup(){
 	// Customise WP Admin
 	include_once(CHILD_DIR.'/lib/inc/custom-admin.php');
 
+	// Theme options
+	include_once(CHILD_DIR.'/lib/inc/website-settings.php');
+
 	// WP Custom Post Types
 	include_once(CHILD_DIR.'/lib/inc/cpt/cpt.php');
 
@@ -141,5 +144,10 @@ function wpgw_theme_setup(){
 
 	// Page gallery
 	add_action('genesis_entry_content', 'wpgw_page_gallery');
+
+	// ANALYTICS ////////////////////////////////
+	
+	// Add Google Analytics
+	add_action('wp_head', 'wpgw_google_analytics');
 
 }
