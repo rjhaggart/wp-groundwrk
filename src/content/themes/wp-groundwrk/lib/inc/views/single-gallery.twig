@@ -1,0 +1,15 @@
+<article class="type-page status-publish entry" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+<div class="entry-content">
+
+	<div class="gallery">
+		<div class="gallery-content">
+			<h2>{{gallery.post_title}}</h2>
+			<p>{{gallery.post_content|excerpt(30)}}</p>
+			{% for image in gallery.get_field('wpgw_gallery') %}
+				<a class="fancybox" rel="group" href="{{image.sizes.large}}"><img src="{{image.sizes.thumbnail}}" alt="" /></a>
+			{% endfor %}
+		</div>
+	</div>
+
+</div>
+</article>
