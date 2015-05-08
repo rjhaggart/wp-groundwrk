@@ -68,11 +68,19 @@ function wpgw_child_load_favicon(){
 
 }
 
+// Add Google Analytics tracking code
+function wpgw_google_analytics(){
+
+	$context['gaid'] = get_option('wpgw_analytics');
+	Timber::render('/lib/inc/views/google-analytics.twig', $context);
+	
+}
+
 // Customize the credits
 function wpgw_child_footer_creds_text(){
 
 	$context['date'] = date('Y');
-	$context['blogname'] = get_bloginfo('name');
+	$context['copyright'] = get_option('wpgw_copyright');
 	Timber::render('/lib/inc/views/footer-creds.twig', $context);
 
 }

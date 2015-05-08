@@ -66,3 +66,5 @@ if(!function_exists('addTaxonomy')){
 
 include_once(CHILD_DIR.'/lib/inc/cpt/cpt-events.php');
 include_once(CHILD_DIR.'/lib/inc/cpt/cpt-contacts.php');
+include_once(CHILD_DIR.'/lib/inc/cpt/cpt-gallery.php');
+include_once(CHILD_DIR.'/lib/inc/cpt/cpt-status.php');
